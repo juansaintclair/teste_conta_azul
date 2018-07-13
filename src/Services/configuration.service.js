@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('minimal.template')
+        .module('contaazul.teste')
         .service('ConfigurationService', ConfigurationService);
     
     /* @ngInject */

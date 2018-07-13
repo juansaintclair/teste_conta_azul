@@ -1,9 +1,9 @@
 {
     "manifest_version": 1,
-    "version": "0.1",
+    "version": "1.0.0",
 
-    "short_name": "portaladmin",
-    "name": "Portal admin",
+    "short_name": "contaazul-teste",
+    "name": "Teste Conta Azul",
     "default_locale": "pt-BR",
 
     "start_url": "/",

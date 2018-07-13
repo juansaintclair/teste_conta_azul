@@ -2,6 +2,6 @@
     'use strict';
 
     angular
-        .module('minimal.template')
+        .module('contaazul.teste')
         .constant('COMPANY_CODE', '@todo(COLOCAR O CODIGO DA OPERADORA AQUI, QUANDO NECESSARIO)');
 }());

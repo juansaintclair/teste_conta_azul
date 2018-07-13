@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('minimal.template')
+        .module('contaazul.teste')
         .component('caHeader', HeaderComponent());
     
     function HeaderComponent() {
