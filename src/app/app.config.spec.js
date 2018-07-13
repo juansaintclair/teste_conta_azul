@@ -10,7 +10,7 @@
                 $locationProvider = _$locationProvider_;
             });
 
-            module('minimal.template');
+            module('contaazul.teste');
             inject();
         });
 

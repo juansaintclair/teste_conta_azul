@@ -2,11 +2,10 @@
     'use strict';
 
     angular
-        .module('minimal.template', [
+        .module('contaazul.teste', [
             'angularSpinner',
             'ngLocale',
             'ngSanitize',
-            'ui.router',
-            'ui.utils.masks'
+            'ui.router'
         ]);
 }());

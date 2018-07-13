@@ -7,7 +7,7 @@
 
 
     /* @ngInject */
-    function MainController(JobDataService) {
+    function MainController() {
         var vm = this;
 
     }
