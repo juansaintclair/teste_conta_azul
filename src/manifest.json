@@ -1,0 +1,14 @@
+{
+    "manifest_version": 1,
+    "version": "0.1",
+
+    "short_name": "portaladmin",
+    "name": "Portal admin",
+    "default_locale": "pt-BR",
+
+    "start_url": "/",
+    "background_color": "#FFFFFF",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "orientation": "portrait"
+  }

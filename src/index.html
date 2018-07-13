@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Portal Admin</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <base href="/">
+    <link rel="shortcut icon" href="assets/imgs/favicon.ico">
+    <base href="/">
+    <link rel="stylesheet" href="assets/styles/vendors.css">
+    <link rel="stylesheet" href="assets/styles/styles.css">
+</head>
+<body ng-app="minimal.template">
+    <div class="modal">
+        <div id="spinner-content" us-spinner spinner-key="spinner-content"></div>
+        <div class="body">
+            <gb-header></gb-header>
+            <ui-view></ui-view>
+        </div>
+        <div class="footer"></div>
+    </div>
+
+    <script type="text/javascript" src="assets/js/vendors.js"></script>
+    <script type="text/javascript" src="assets/js/bundles.js"></script>
+</body>
+</html>

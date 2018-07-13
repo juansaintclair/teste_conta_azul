@@ -1,0 +1,7 @@
+bower_components/
+dist/
+_dev/
+_prod/
+node_modules/
+src/assets/
+coverage/
