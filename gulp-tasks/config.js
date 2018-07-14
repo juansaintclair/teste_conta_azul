@@ -34,7 +34,6 @@ module.exports = {
             './node_modules/angular-cookies/angular-cookies.js',
             './node_modules/angular-i18n/angular-locale_pt-br.js',
             './node_modules/angular-sanitize/angular-sanitize.js',
-            './node_modules/angular-spinner/dist/angular-spinner.js',
             './node_modules/angular-touch/angular-touch.js',
             './node_modules/@uirouter/core/_bundles/ui-router-core.js',
             './node_modules/@uirouter/angularjs/release/ui-router-angularjs.js',
