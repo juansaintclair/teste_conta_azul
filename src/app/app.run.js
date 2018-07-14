@@ -2,11 +2,11 @@
     'use strict';
 
     angular
-        .module('contaazul.teste')
+        .module('ca.weathernow')
         .run(AppRun);
 
     /* @ngInject */
-    function AppRun($analytics, $rootScope, $location, $transitions) {
+    function AppRun($rootScope, $location, $transitions) {
         var concurrentRequests = 0,
             dataLayer = window.dataLayer = window.dataLayer || [],
             hideSpinner = $rootScope.$on('us-spinner:stop', function(event, key) {
@@ -22,15 +22,6 @@
                 }
 
                 concurrentRequests++;
-            }),
-            transitionListener = $transitions.onSuccess({}, function() {
-                $analytics.pageTrack($location.path());
-                dataLayer.push({
-                    event: 'ngRouteChange',
-                    attributes: {
-                        route: $location.path()
-                    }
-                });
             });
     }
 })();

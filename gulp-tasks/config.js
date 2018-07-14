@@ -76,7 +76,7 @@ module.exports = {
         svgs: `${paths.prod}/assets/svgs`
     },
     paths: paths,
-    projectModule: 'contaazul.teste',
+    projectModule: 'ca.weathernow',
     server: {
         browser: require('os').platform() === 'win32' ? 'chrome' : 'google chrome',
         mainHTML: `${paths.src}/index.html`,

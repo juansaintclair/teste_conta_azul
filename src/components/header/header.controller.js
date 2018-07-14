@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('contaazul.teste')
+        .module('ca.weathernow')
         .component('caHeader', HeaderComponent());
     
     function HeaderComponent() {

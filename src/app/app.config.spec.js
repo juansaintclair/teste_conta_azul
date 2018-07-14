@@ -10,7 +10,7 @@
                 $locationProvider = _$locationProvider_;
             });
 
-            module('contaazul.teste');
+            module('ca.weathernow');
             inject();
         });
 

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('contaazul.teste')
+        .module('ca.weathernow')
         .config(AppConfig);
 
     /* @ngInject */
