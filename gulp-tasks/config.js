@@ -47,11 +47,6 @@ module.exports = {
     base: __dirname.replace(require('path').basename(__dirname), ''),
     buildHash: cacheBust,
     dev: {
-        constants: {
-            API_URL: '//esb.webapidev.cd.com/v1/api/',
-            AUTHORIZATION: '9ec365a9a6664414ac8927b1bda4744c',
-            ORIGIN_CODE: '9b519887127e42eab74cc1dd19b2a30d'
-        },
         fonts: `${paths.dev}/assets/fonts`,
         images: `${paths.dev}/assets/imgs`,
         js: `${paths.dev}/assets/js`,
@@ -61,11 +56,6 @@ module.exports = {
         svgs: `${paths.dev}/assets/svgs`
     },
     prod: {
-        constants: {
-            API_URL: 'https://gtw.com.br/v1/api/',
-            AUTHORIZATION: 'c325452a3cf7473e85d375faca1ee812',
-            ORIGIN_CODE: '92164369cc414be9974afd6d738b8db0'
-        },
         fonts: `${paths.prod}/assets/fonts`,
         images: `${paths.prod}/assets/imgs`,
         js: `${paths.prod}/assets/js`,

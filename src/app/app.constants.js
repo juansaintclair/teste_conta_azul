@@ -3,5 +3,6 @@
 
     angular
         .module('ca.weathernow')
-        .constant('COMPANY_CODE', '@todo(COLOCAR O CODIGO DA OPERADORA AQUI, QUANDO NECESSARIO)');
+        .constant('API_URL', 'http://api.openweathermap.org/data/2.5/find')
+        .constant('AUTHORIZATION', '96572aea41a88301624938f310127426');
 }());
