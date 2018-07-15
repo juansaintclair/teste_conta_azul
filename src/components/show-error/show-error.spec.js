@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Component: Show-Loading', () => {
+describe('Component: Show-Error', () => {
     application.initModule();
     var $ctrl,
         ShowErrorComponentController,
@@ -8,10 +8,18 @@ describe('Component: Show-Loading', () => {
 
     beforeEach(inject((_$componentController_, _$rootScope_) => {
         $ctrl = _$componentController_;
-        ShowErrorComponentController = $ctrl('caShowLoading', null, {});
+        ShowErrorComponentController = $ctrl('caShowError', null, {});
+
     }));
     
     it('ShowErrorComponentController should be defined', () => {
         expect(ShowErrorComponentController).toBeDefined();
     });
+
+    it('Deve garantir o funcionamento dos bindings', () => {
+        var ctrl = $ctrl('caShowError', null, {
+            retry: angular.noop
+        });
+        expect(typeof ctrl.retry).toEqual('function');
+    }); 
 });
