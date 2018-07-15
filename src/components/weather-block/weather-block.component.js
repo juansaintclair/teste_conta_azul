@@ -10,7 +10,8 @@
             templateUrl: '/components/weather-block/weather-block.template.html',
             controller: WeatherBlockComponent,
             bindings: {
-                city: '<'
+                city: '<',
+                featured: '@'
             }
         };
         return component;
@@ -22,6 +23,7 @@
 
         vm.setTemperatureColor = setTemperatureColor;
         vm.showWeatherResult = showWeatherResult;
+        vm.showFeatured = showFeatured;
         vm.$onInit = onInit;
 
         vm.loading = true;
@@ -86,6 +88,10 @@
             vm.loading = false;
         }
 
+        function showFeatured(city) {
+            return (city === vm.featured);
+        }
+
         function setTemperatureColor(temperature) {
             switch(true) {
                 case (temperature <= 5):
@@ -100,5 +106,6 @@
         function showWeatherResult(loading, weatherResult) {
             return (!loading && weatherResult);
         }
+        
     }
 })();

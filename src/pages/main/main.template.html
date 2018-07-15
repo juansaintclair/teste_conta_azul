@@ -1,3 +1,3 @@
 <article class="main-wrapper">
-    <ca-weather-block ng-repeat="city in main.citys" city="city"></ca-weather-block>
+    <ca-weather-block ng-repeat="city in main.citys" city="city" featured="{{ main.featuredCity }}" ng-click="main.changeSelectedCity(city.name)"></ca-weather-block>
 </article>
