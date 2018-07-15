@@ -17,6 +17,9 @@
             $httpBackend = _$httpBackend_;
             HttpService = _HttpService_;
 
+            $httpBackend.expectGET(url).respond({});
+            $httpBackend.expectGET('/pages/main/main.template.html').respond({});
+
             spyOn(HttpService, 'get').and.callThrough();
         }));
 
@@ -29,15 +32,15 @@
             expect(HttpService.get).toHaveBeenCalled();
         });
 
-        it('Should return success', () => {
+        it('get method should behave return a success', (done) => {
             var mockResponse = {
-                data: { success: true, message: 'Success!' }
+                data: {}
             };
-    
+
             $httpBackend.expectGET(url)
                 .respond(mockResponse);
-    
-            HttpService.get(url).then((data) => {
+
+            HttpService.get(url).then(function(data) {
                 expect(data).toEqual(mockResponse);
             });
     

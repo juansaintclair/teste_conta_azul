@@ -27,9 +27,9 @@
         }
 
         function useCacheByTime(lastUpdate, apiRefreshTime) {
-            var now = moment(new Date());
-            var minutesSinceLastUpdate = now.diff(lastUpdate, 'minutes');
-            var interValInMinutes = _milisecondsToMinutes(apiRefreshTime);
+            var now = moment(new Date()),
+                minutesSinceLastUpdate = now.diff(lastUpdate, 'minutes'),
+                interValInMinutes = _milisecondsToMinutes(apiRefreshTime);
             return (minutesSinceLastUpdate < interValInMinutes);
         }
 
