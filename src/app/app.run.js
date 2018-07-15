@@ -6,7 +6,7 @@
         .run(AppRun);
 
     /* @ngInject */
-    function AppRun($rootScope, $location, $transitions) {
-        //Aguardando
+    function AppRun(amMoment) {
+        amMoment.changeLocale('pt-br');
     }
 })();

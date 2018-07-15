@@ -1,23 +1,24 @@
 <article class="container-weather-block-component">
   <header class="header">
-    <h2 class="city-name">Nuuki, BR {{ $ctrl.teste }}</h2>
+    <h2 class="city-name">{{ $ctrl.city.name }}, {{ $ctrl.city.country }} </h2>
   </header>
   <section class="container-temperature">
-    <h3 class="temperature" ng-class="$ctrl.setTemperatureColor(28)">28<span class="temperature-indicator">º</span></h3>
+    <ca-show-loading ng-if="$ctrl.loading"></ca-show-loading>
+    <h3 ng-if="$ctrl.showWeatherResult($ctrl.loading, $ctrl.weatherResult)" class="temperature" ng-class="$ctrl.setTemperatureColor({{$ctrl.weatherResult.temp}})">{{$ctrl.weatherResult.temp}}<span class="temperature-indicator">º</span></h3>
   </section>
-  <footer class="container-more-info">
+  <footer class="container-more-info" ng-if="$ctrl.showWeatherResult($ctrl.loading, $ctrl.weatherResult)">
     <div class="container-humidity-pressure">
         <div class="humidity">
           <p class="title">Humidity</p>
-          <p class="description">85%</p>
+          <p class="description">{{$ctrl.weatherResult.humidity}}<small>%</small></p>
         </div>
         <div class="pressure">
           <p class="title">Pressure</p>
-          <p class="description">888hPa</p>
+          <p class="description">{{$ctrl.weatherResult.pressure}}<small>hPa</small></p>
         </div>
     </div>
     <div class="container-update">
-      <p class="update">Updated at 10:27 PM</p>
+      <p class="update">Updated at {{$ctrl.weatherResult.displayLastUpdate}}</p>
     </div>
   </footer>
 </article>

@@ -38,7 +38,8 @@ module.exports = {
             './node_modules/@uirouter/core/_bundles/ui-router-core.js',
             './node_modules/@uirouter/angularjs/release/ui-router-angularjs.js',
             './node_modules/ngstorage/ngStorage.js',
-            './node_modules/spin.js/spin.js',
+            './node_modules/moment/min/moment-with-locales.min.js',
+            './node_modules/angular-moment/angular-moment.js'
         ],
         importFiles: [
             'robots.txt'

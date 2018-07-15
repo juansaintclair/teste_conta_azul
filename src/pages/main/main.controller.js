@@ -12,13 +12,13 @@
 
         vm.featuredCity = 'Urubici';
         vm.citys = [{
-            city: 'Nuuk', 
+            name: 'Nuuk', 
             country: 'GL'
         }, {
-            city: 'Urubici', 
+            name: 'Urubici', 
             country: 'BR'
         }, {
-            city: 'Nairobi', 
+            name: 'Nairobi', 
             country: 'KE'
         }];
     }

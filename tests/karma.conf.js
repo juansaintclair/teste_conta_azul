@@ -24,9 +24,10 @@ module.exports = (config) => {
             'node_modules/angular-touch/angular-touch.js',
             'node_modules/@uirouter/core/_bundles/ui-router-core.js',
             'node_modules/@uirouter/angularjs/release/ui-router-angularjs.js',
-            'node_modules/spin.js/spin.js',
             'src/app/app.module.js',
             'src/app/app.module.spec.js',
+            './node_modules/moment/min/moment-with-locales.min.js',
+            './node_modules/angular-moment/angular-moment.js',
             'src/**/*.js'
         ],
 
