@@ -33,3 +33,29 @@
             font-size: 40px
             position: relative
             top: -30px
+
+    .container-more-info
+        background-color: rgba($app-background-color,.5)
+
+        .container-humidity-pressure
+            display: flex
+            flex-direction: row
+
+            > .humidity, .pressure
+                text-align: center
+                padding-top: 15px
+                width: 50%
+            .title
+                color: $update-gray
+                font-size: 12px
+                text-transform: uppercase
+            .description
+                padding-top: 9px
+
+        .container-update
+            .update
+                color: $update-gray
+                font-size: 11px
+                text-align: center
+                padding: 15px 0
+                
