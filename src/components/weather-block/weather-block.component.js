@@ -24,20 +24,20 @@
         vm.setTemperatureColor = setTemperatureColor;
         vm.showWeatherResult = showWeatherResult;
         vm.showFeatured = showFeatured;
+        vm.checkHasDataInStorage = checkHasDataInStorage;
         vm.$onInit = onInit;
 
         vm.loading = true;
+        vm.error = false;
 
         function onInit() {
-            _callSetInterval();
-            var setInterval = $interval(_callSetInterval, API_REFRESH_CACHE_TIME);
+            checkHasDataInStorage();
+            var setInterval = $interval(checkHasDataInStorage, API_REFRESH_CACHE_TIME);
         }
 
-        function _callSetInterval() {
-            _checkHasDataInStorage(StorageService.get(vm.city.name+vm.city.country));
-        }
-
-        function _checkHasDataInStorage(weatherResult) {
+        function checkHasDataInStorage() {
+            vm.error = false;
+            var weatherResult = StorageService.get(vm.city.name+vm.city.country);
             if (weatherResult) {
                 _checkCachedTime(weatherResult);
             } else {
@@ -80,11 +80,12 @@
 
         function _getWeatherFromStorage(response) {
             var result = response.list[0];
-            _checkHasDataInStorage(StorageService.get(vm.city.name+vm.city.country));
+            checkHasDataInStorage();
         }
 
         function _catchGetWeather(e) {
             console.error(e);
+            vm.error = true;
             vm.loading = false;
         }
 

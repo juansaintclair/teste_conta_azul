@@ -4,6 +4,7 @@
   </header>
   <section class="container-temperature">
     <ca-show-loading ng-if="$ctrl.loading"></ca-show-loading>
+    <ca-show-error ng-if="$ctrl.error" retry="$ctrl.checkHasDataInStorage()"></ca-show-error>
     <h3 ng-if="$ctrl.showWeatherResult($ctrl.loading, $ctrl.weatherResult)" class="temperature" ng-class="$ctrl.setTemperatureColor({{$ctrl.weatherResult.temp}})">{{$ctrl.weatherResult.temp}}<span class="temperature-indicator">º</span></h3>
   </section>
   <footer class="container-more-info" ng-if="$ctrl.showWeatherResult($ctrl.loading, $ctrl.weatherResult)">
