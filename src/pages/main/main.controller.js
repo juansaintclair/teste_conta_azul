@@ -10,5 +10,16 @@
     function MainController() {
         var vm = this;
 
+        vm.featuredCity = 'Urubici';
+        vm.citys = [{
+            city: 'Nuuk', 
+            country: 'GL'
+        }, {
+            city: 'Urubici', 
+            country: 'BR'
+        }, {
+            city: 'Nairobi', 
+            country: 'KE'
+        }];
     }
 })();
