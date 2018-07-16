@@ -32,19 +32,5 @@
             expect(HttpService.get).toHaveBeenCalled();
         });
 
-        it('get method should behave return a success', (done) => {
-            var mockResponse = {
-                data: {}
-            };
-
-            $httpBackend.expectGET(url)
-                .respond(mockResponse);
-
-            HttpService.get(url).then(function(data) {
-                expect(data).toEqual(mockResponse);
-            });
-    
-            $httpBackend.flush();
-        });
     });
 })();
