@@ -16,7 +16,7 @@ describe('Component: Show-Error', () => {
         expect(ShowErrorComponentController).toBeDefined();
     });
 
-    it('Deve garantir o funcionamento dos bindings', () => {
+    it('Should grant that bindings are correct', () => {
         var ctrl = $ctrl('caShowError', null, {
             retry: angular.noop
         });
