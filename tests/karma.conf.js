@@ -16,16 +16,18 @@ module.exports = (config) => {
 
         // list of files / patterns to load in the browser
         files: [
-            'node_modules/angular/angular.js',
-            'node_modules/angular-cookies/angular-cookies.js',
-            'node_modules/angular-i18n/angular-locale_pt-br.js',
-            'node_modules/angular-mocks/angular-mocks.js',
-            'node_modules/angular-sanitize/angular-sanitize.js',
-            'node_modules/angular-spinner/dist/angular-spinner.js',
-            'node_modules/angular-touch/angular-touch.js',
-            'node_modules/@uirouter/core/_bundles/ui-router-core.js',
-            'node_modules/@uirouter/angularjs/release/ui-router-angularjs.js',
-            'node_modules/spin.js/spin.js',
+            './node_modules/angular/angular.js',
+            './node_modules/angular-cookies/angular-cookies.js',
+            './node_modules/angular-i18n/angular-locale_pt-br.js',
+            './node_modules/angular-sanitize/angular-sanitize.js',
+            './node_modules/angular-touch/angular-touch.js',
+            './node_modules/@uirouter/core/_bundles/ui-router-core.js',
+            './node_modules/@uirouter/angularjs/release/ui-router-angularjs.js',
+            './node_modules/ngstorage/ngStorage.js',
+            './node_modules/moment/min/moment-with-locales.min.js',
+            './node_modules/angular-moment/angular-moment.js',
+            './node_modules/angular-mocks/angular-mocks.js',
+            './node_modules/angulartics/dist/angulartics.min.js',
             'src/app/app.module.js',
             'src/app/app.module.spec.js',
             'src/**/*.js'
@@ -48,7 +50,7 @@ module.exports = (config) => {
         // - PhantomJS
         // - IE (only Windows)
         browsers: ['PhantomJS'],
-        //browsers: ['Chrome'],
+        // browsers: ['Chrome'],
 
         // Which plugins to enable
         plugins: [
@@ -81,10 +83,10 @@ module.exports = (config) => {
         },
         // the configure thresholds
         thresholdReporter: {
-            statements: 80,
-            branches: 80,
-            functions: 80,
-            lines: 80
+            statements: 70,
+            branches: 70,
+            functions: 70,
+            lines: 70
         },
         // test results reporter to use
         // possible values: 'dots', 'progress'

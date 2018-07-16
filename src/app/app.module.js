@@ -2,10 +2,10 @@
     'use strict';
 
     angular
-        .module('contaazul.teste', [
-            'angularSpinner',
+        .module('ca.weathernow', [
             'ngLocale',
             'ngSanitize',
-            'ui.router'
+            'ui.router',
+            'angularMoment'
         ]);
 }());

@@ -34,12 +34,12 @@ module.exports = {
             './node_modules/angular-cookies/angular-cookies.js',
             './node_modules/angular-i18n/angular-locale_pt-br.js',
             './node_modules/angular-sanitize/angular-sanitize.js',
-            './node_modules/angular-spinner/dist/angular-spinner.js',
             './node_modules/angular-touch/angular-touch.js',
             './node_modules/@uirouter/core/_bundles/ui-router-core.js',
             './node_modules/@uirouter/angularjs/release/ui-router-angularjs.js',
             './node_modules/ngstorage/ngStorage.js',
-            './node_modules/spin.js/spin.js',
+            './node_modules/moment/min/moment-with-locales.min.js',
+            './node_modules/angular-moment/angular-moment.js'
         ],
         importFiles: [
             'robots.txt'
@@ -48,11 +48,6 @@ module.exports = {
     base: __dirname.replace(require('path').basename(__dirname), ''),
     buildHash: cacheBust,
     dev: {
-        constants: {
-            API_URL: '//esb.webapidev.cd.com/v1/api/',
-            AUTHORIZATION: '9ec365a9a6664414ac8927b1bda4744c',
-            ORIGIN_CODE: '9b519887127e42eab74cc1dd19b2a30d'
-        },
         fonts: `${paths.dev}/assets/fonts`,
         images: `${paths.dev}/assets/imgs`,
         js: `${paths.dev}/assets/js`,
@@ -62,11 +57,6 @@ module.exports = {
         svgs: `${paths.dev}/assets/svgs`
     },
     prod: {
-        constants: {
-            API_URL: 'https://gtw.com.br/v1/api/',
-            AUTHORIZATION: 'c325452a3cf7473e85d375faca1ee812',
-            ORIGIN_CODE: '92164369cc414be9974afd6d738b8db0'
-        },
         fonts: `${paths.prod}/assets/fonts`,
         images: `${paths.prod}/assets/imgs`,
         js: `${paths.prod}/assets/js`,
@@ -76,7 +66,7 @@ module.exports = {
         svgs: `${paths.prod}/assets/svgs`
     },
     paths: paths,
-    projectModule: 'contaazul.teste',
+    projectModule: 'ca.weathernow',
     server: {
         browser: require('os').platform() === 'win32' ? 'chrome' : 'google chrome',
         mainHTML: `${paths.src}/index.html`,

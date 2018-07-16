@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
-    <title>Teste Conta Azul</title>
+    <title>WeatherNow - Teste ContaAzul</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -11,17 +12,17 @@
     <link rel="stylesheet" href="assets/styles/vendors.css">
     <link rel="stylesheet" href="assets/styles/styles.css">
 </head>
-<body ng-app="contaazul.teste">
-    <div class="modal">
-        <div id="spinner-content" us-spinner spinner-key="spinner-content"></div>
-        <div class="body">
-            <ca-header></ca-header>
-            <ui-view></ui-view>
-        </div>
-        <div class="footer"></div>
-    </div>
+
+<body ng-app="ca.weathernow">
+
+    <ca-header></ca-header>
+    <main class="container-main">
+        <ui-view></ui-view>
+    </main>
+    <div class="footer"></div>
 
     <script type="text/javascript" src="assets/js/vendors.js"></script>
     <script type="text/javascript" src="assets/js/bundles.js"></script>
 </body>
+
 </html>
