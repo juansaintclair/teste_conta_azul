@@ -4,19 +4,31 @@ describe('Component: WeatherBlock', () => {
     application.initModule();
     var $ctrl,
         WeatherBlockComponent,
-        StorageService,
         scope;
 
-    beforeEach(inject((_$componentController_, _$injector_, _$rootScope_) => {
+    beforeEach(inject((_$componentController_, _$injector_, _$interval_, _$rootScope_) => {
         $ctrl = _$componentController_;
         WeatherBlockComponent = $ctrl('caWeatherBlock', null, {});
-        StorageService = _$injector_.get('StorageService');
+
+        WeatherBlockComponent.city = {
+            name: 'Nuuk',
+            country: 'GL'
+        };
+
+        WeatherBlockComponent.featured = 'Urubici';
         
+        spyOn(WeatherBlockComponent, '$onInit').and.callThrough();
         spyOn(WeatherBlockComponent, 'setTemperatureColor').and.callThrough();
         spyOn(WeatherBlockComponent, 'showFeatured').and.callThrough();
         spyOn(WeatherBlockComponent, 'showWeatherResult').and.callThrough();
+        spyOn(WeatherBlockComponent, 'checkHasDataInStorage').and.callThrough();
     }));
-    
+
+    it('Should call onInit', () => {
+        WeatherBlockComponent.$onInit();
+        expect(WeatherBlockComponent.$onInit).toHaveBeenCalled();
+    });
+
     it('WeatherBlockComponent should be defined', () => {
         expect(WeatherBlockComponent).toBeDefined();
     });
@@ -51,6 +63,11 @@ describe('Component: WeatherBlock', () => {
     it('showWeatherResult should return true if exist result and anything is loading', () => {
         var featuredCity = WeatherBlockComponent.showWeatherResult(false, true);
         expect(featuredCity).toBe(true);
+    });
+
+    it('checkHasDataInStorage should set var error to false', () => {
+        WeatherBlockComponent.checkHasDataInStorage('Nuuk', 'GL');
+        expect(WeatherBlockComponent.error).toBe(false);
     });
 
 });

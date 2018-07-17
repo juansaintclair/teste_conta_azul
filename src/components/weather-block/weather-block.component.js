@@ -31,29 +31,26 @@
         vm.error = false;
 
         function onInit() {
-            checkHasDataInStorage();
-            var setInterval = $interval(checkHasDataInStorage, API_REFRESH_CACHE_TIME);
+            checkHasDataInStorage(vm.city.name, vm.city.country);
+            var setInterval = $interval(checkHasDataInStorage(vm.city.name, vm.city.country), API_REFRESH_CACHE_TIME);
         }
 
-        function checkHasDataInStorage() {
+        function checkHasDataInStorage(city, country) {
             vm.error = false;
-            var weatherResult = StorageService.get(vm.city.name+vm.city.country);
-            if (weatherResult) {
-                _checkCachedTime(weatherResult);
-            } else {
-                _getWeather(vm.city.name, vm.city.country);
-            }
+            vm.loading = true;
+
+            var weatherResult = StorageService.get(city+country);
+            return (weatherResult)? _checkCachedTime(weatherResult):_getWeather(city, country);
         }
 
         function _checkCachedTime(weatherResult) {
             var useCacheByTime = WeatherFactory.useCacheByTime(weatherResult.lastUpdate, API_REFRESH_CACHE_TIME);
             if (useCacheByTime) {
                 vm.weatherResult = weatherResult;
+                vm.loading = false;  
             } else {
                 _getWeather(vm.city.name, vm.city.country);
             }
-            
-            vm.loading = false;
         }
 
         function _getWeather(city, country) {
@@ -80,7 +77,7 @@
 
         function _getWeatherFromStorage(response) {
             var result = response.list[0];
-            checkHasDataInStorage();
+            checkHasDataInStorage(vm.city.name, vm.city.country);
         }
 
         function _catchGetWeather(e) {
