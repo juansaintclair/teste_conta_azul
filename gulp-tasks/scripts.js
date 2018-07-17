@@ -19,7 +19,7 @@ gulp.task('scripts:bundles', ['constants'], () => {
         .pipe(sourcemaps.init())
         .pipe(concat('bundles.js'))
         .pipe(ngAnnotate())
-        .pipe(sourcemaps.write('.'))
+        .pipe(gulpIf(global.pathDestination !== config.prod,sourcemaps.write('.')))
         .pipe(gulpIf(global.pathDestination === config.prod, uglify()))
         .pipe(gulpIf(global.pathDestination === config.prod, config.buildHash.resources()))
         .pipe(gulp.dest(global.pathDestination.js))
